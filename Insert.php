@@ -52,24 +52,12 @@ $resultimg = $s3->putObject(array(
     'Bucket' => 'zsayed1after1',
     'Key'    =>  basename($_FILES['photo']['name']),
     'SourceFile' => $gray_uploadfile,
+    'region' => 'us-west-2',
     'ACL' => 'public-read'
 ));
 $finishedurl=$resultimg['ObjectURL'];
 imagedestroy($image_raw);
-$sql = "CREATE TABLE IF NOT EXISTS records
-(
-id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-email VARCHAR(32),
-phone VARCHAR(32),
-s3_raw_url VARCHAR(200),
-s3_finished_url VARCHAR(200),
-status INT(1),
-receipt BIGINT
-)";
-$create_table = $conn->query($sql);
-if(!($create_table)){
-    echo "table insertion error";
-}
+
 $stmt = "INSERT INTO records (email,phone,s3_raw_url,s3_finished_url,status,receipt) VALUES ('$email','$phone','$raw_uri','$finishedurl',0,651615)";
 if($conn->query($stmt) === FALSE){
     echo "data insert error";
