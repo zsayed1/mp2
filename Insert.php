@@ -2,7 +2,7 @@
 header('Location: gallery.php');
 require 'vendor/autoload.php';
 use Aws\Rds\RdsClient;
-$email=$_POST['email'];
+
 $phone=$_POST['phone'];
 $client = RdsClient::factory(array(
         'version' => 'latest',
