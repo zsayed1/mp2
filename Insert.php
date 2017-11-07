@@ -6,11 +6,11 @@ use Aws\Rds\RdsClient;
 $phone=$_POST['phone'];
 $client = RdsClient::factory(array(
         'version' => 'latest',
-        'region'  => 'us-west-2'
+        'region'  => 'us-west-2a'
 ));
 $s3 = new Aws\S3\S3Client([
     'version' => 'latest',
-    'region'  => 'us-west-2'
+    'region'  => 'us-west-2a'
 ]);
 $result = $client->describeDBInstances(array(
     'DBInstanceIdentifier' => 'zsayed1-db',
@@ -27,7 +27,7 @@ $resultput = $s3->putObject(array(
              'Bucket'=>'zsayed1before1',
              'Key' =>  $name,
              'SourceFile' => $tmp,
-             'region' => 'us-west-2',
+             'region' => 'us-west-2a',
              'ACL'    => 'public-read'
         ));
 $raw_uri = $resultput['ObjectURL'];
