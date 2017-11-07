@@ -36,7 +36,7 @@
                         <h1 align="center">Submit your details</h1>
                 </div>
                 <div>
-                        <form enctype="multipart/form-data" action="insert.php" method="POST">
+                        <form enctype="multipart/form-data" action="Insert.php" method="POST">
                                 <table align="center">
                                         <tr>
                                                 <td>Email: </td>
