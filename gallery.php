@@ -8,8 +8,11 @@ $client = RdsClient::factory(array(
 $result = $client->describeDBInstances(array(
     'DBInstanceIdentifier' => 'zsayed1-db'
 ));
+$address= "";
 $address = $result['DBInstances'][0]['Endpoint']['Address'];
-$conn = mysqli_:questionconnect($address,"zsayed1","password","test_2",3306) or die("Error " . mysqli_error($link));
+
+
+$conn = mysqli_connect($address,"zsayed1","password","test_2") or die("Error " . mysqli_error($link));
 if(mysqli_connect_errno()) {
         printf("Connection failed: %s\n", mysqli_connect_error());
         exit();
@@ -65,4 +68,4 @@ $res = $conn->use_result();
                 </div>
         </body>
 
-  
+  //aws rds describe-db-instances --output text | grep ENDPOINT | sed -e "s/3306//g" -e "s/ //g" -e "s/ENDPOINT//g"
