@@ -6,11 +6,11 @@ use Aws\Rds\RdsClient;
 $phone=$_POST['phone'];
 $client = RdsClient::factory(array(
         'version' => 'latest',
-        'region'  => 'us-west-2a'
+        'region'  => 'us-west-2'
 ));
 $s3 = new Aws\S3\S3Client([
     'version' => 'latest',
-    'region'  => 'us-west-2a'
+    'region'  => 'us-west-2'
 ]);
 $result = $client->describeDBInstances(array(
     'DBInstanceIdentifier' => 'zsayed1-db',
