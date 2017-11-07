@@ -9,7 +9,7 @@ $result = $client->describeDBInstances(array(
     'DBInstanceIdentifier' => 'zsayed1-db'
 ));
 $address = $result['DBInstances'][0]['Endpoint']['Address'];
-$conn = mysqli_connect($address,"zsayed1","password","test_2","3306") or die("Error " . mysqli_error($link));
+$conn = mysqli_:questionconnect($address,"zsayed1","password","test_2",3306) or die("Error " . mysqli_error($link));
 if(mysqli_connect_errno()) {
         printf("Connection failed: %s\n", mysqli_connect_error());
         exit();
@@ -25,7 +25,7 @@ $res = $conn->use_result();
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
                 <style>
                         body {
-                               
+
                                 background-repeat: no-repeat;
                         }
                         a{
@@ -64,3 +64,5 @@ $res = $conn->use_result();
                         ?>
                 </div>
         </body>
+
+  
