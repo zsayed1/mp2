@@ -27,7 +27,7 @@ $resultput = $s3->putObject(array(
              'Bucket'=>'zsayed1before1',
              'Key' =>  $name,
              'SourceFile' => $tmp,
-             'region' => 'us-west-2a',
+             'region' => 'us-west-2',
              'ACL'    => 'public-read'
         ));
 $raw_uri = $resultput['ObjectURL'];
