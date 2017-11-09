@@ -19,8 +19,8 @@ echo "Your Topic Arn: . $topicarn";
 
 //subscribing sns
 $sqs = $client->subscribe([
-    'Endpoint' => '+16507978341',
-    'Protocol' => 'sms',
+    'Endpoint' => 'zsayed1@hawk.iit.edu',
+    'Protocol' => 'email',
     'TopicArn' => $topicarn, 
 ]);
 
