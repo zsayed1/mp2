@@ -12,5 +12,7 @@ $result = $sqs->listTopics([
 ]);
 
 print_r($result['Topics']);
-print_r($result['Topics'][0]['TopicArn']);
+$topicarn=($result['Topics'][0]['TopicArn']);
+echo "Your Topic Arn: . $topicarn";
+
 ?>
