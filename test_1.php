@@ -18,10 +18,22 @@ $topicarn=($result['Topics'][0]['TopicArn']);
 echo "Your Topic Arn: . $topicarn";
 
 //subscribing sns
-$sqs = $client->subscribe([
+$subscribe = $sqs->subscribe([
     'Endpoint' => 'zsayed1@hawk.iit.edu',
     'Protocol' => 'email',
     'TopicArn' => $topicarn, 
 ]);
+
+
+$s3 = new Aws\S3\S3Client([
+    'version' => 'lates',
+    'region' => 'us-west-2'
+]);
+
+$listbucketresult = $s3->listBuckets([
+
+]);
+
+echo "/n" . $listbucketresult['Buckets']['Name'];
 
 ?>
